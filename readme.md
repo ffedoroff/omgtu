@@ -23,3 +23,12 @@
 [просмотреть код](https://github.com/ffedoroff/omgtu/blob/master/semestr5/lab4/src/main.java)
 
 
+#### ЛР №5
+```Задать движение по экрану строк (одна за другой) из массива строк. Направление движения по апплету и значение каждо```
+[просмотреть код](https://github.com/ffedoroff/omgtu/blob/master/semestr5/lab4/src/main.java)
+
+
+#### ЛР №6
+```Генерация таблиц по переданным параметрам: заголовок, количество строк и столбцов, цвет фона.```
+[просмотреть код](https://github.com/ffedoroff/omgtu/blob/master/semestr5/lab6/src/WEB-INF/classes/MyServlet.java)
+
