@@ -33,3 +33,4 @@
 ```Генерация таблиц по переданным параметрам: заголовок, количество строк и столбцов, цвет фона.```
 [просмотреть код](https://github.com/ffedoroff/omgtu/blob/master/semestr5/lab6/src/WEB-INF/classes/MyServlet.java)
 
+![sample](/semestr5/lab6/img/lab6.png)
