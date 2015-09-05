@@ -33,5 +33,7 @@
 ```Генерация таблиц по переданным параметрам: заголовок, количество строк и столбцов, цвет фона.```
 [просмотреть код](https://github.com/ffedoroff/omgtu/blob/master/semestr5/lab6/src/WEB-INF/classes/MyServlet.java)
 
-Пример сгенерированной страницы по запросу `http://127.0.0.1:8080/lab6/about?header=superheader&rows=5&columns=4&color=red`:
+Пример сгенерированной страницы по запросу `http://127.0.0.1:8080/lab6/about?header=superheader&rows=5&columns=4&color=red`
+:
+
 ![sample](/semestr5/lab6/img/lab6.png)
