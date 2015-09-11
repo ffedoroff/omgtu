@@ -25,9 +25,10 @@
 
 #### ЛР №5
 ```Клиент посылает через сервер	сообщение другому клиенту.```
-<!---
 [просмотреть код](https://github.com/ffedoroff/omgtu/blob/master/semestr5/lab5/src/main.java)
--->
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/YBKhMZBcDQU" frameborder="0" allowfullscreen></iframe>
+
 
 #### ЛР №6
 ```Генерация таблиц по переданным параметрам: заголовок, количество строк и столбцов, цвет фона.```

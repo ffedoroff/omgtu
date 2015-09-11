@@ -16,7 +16,7 @@ public class main
         while ( true ) // ввод числа строк
         {
             System.out.println("Введите число строк");
-            Scanner sc1 = new Scanner(System. in );
+            Scanner sc1 = new Scanner(System.in);
             try
             {
                 n = sc1.nextInt();
@@ -34,7 +34,7 @@ public class main
         String shortestString = null; // самая короткая строка0
         for (int i = 0; i < n; i++)
         {
-            System. out.println( "Введите строку №" + (i+1));
+            System.out.println( "Введите строку №" + (i+1));
             String str = sc2.nextLine();
             if (i == 0) {
                 shortestString = str;
