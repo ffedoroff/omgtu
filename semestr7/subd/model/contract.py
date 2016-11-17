@@ -7,8 +7,8 @@ class Contract(models.Model):
 
     class Meta:
         app_label = "subd"
-        verbose_name = "Контакт"
-        verbose_name_plural = "Контракты"
+        verbose_name = "Договор"
+        verbose_name_plural = "Договоры"
 
     class Type:
         AUTO = 'A'
@@ -22,11 +22,16 @@ class Contract(models.Model):
 
     type = models.CharField("тип", max_length=1, choices=Type.CHOICES)
     amount = models.DecimalField("Сумма", max_digits=8, decimal_places=2)
+    comission = models.DecimalField("Комиссия", max_digits=8, decimal_places=2)
     tariff = models.DecimalField("Тариф %", max_digits=8, decimal_places=2)
     date = models.DateTimeField("Дата")
     filial = models.ForeignKey("Filial", verbose_name="филиал")
     client = models.ForeignKey("Client", verbose_name="клиент")
     agent = models.ForeignKey("Agent", verbose_name="агент")
+
+    def save(self, *args, **kwargs):
+        self.comission = round(self.amount / 100 * self.tariff, 2)
+        super(Contract, self).save(*args, **kwargs)
 
     def __str__(self):
         return unicode(self).encode('utf-8')

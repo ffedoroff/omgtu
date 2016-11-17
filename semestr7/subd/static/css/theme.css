@@ -1,0 +1,19 @@
+body {
+    padding: 20px;
+}
+
+h2.totals span {
+    font-size: 0.8em;
+}
+
+.job-row {
+    background-color: #c5c5c5;
+}
+
+.job-row h4 {
+    padding: 10px;
+}
+
+.frow {
+    padding: 3px;
+}

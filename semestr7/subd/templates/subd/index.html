@@ -1,0 +1,62 @@
+{% extends "subd/base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %}Курсовой Проект Федоров Роман{% endblock %}
+{% block content %}
+<script src="{% static 'js/index.js' %}"></script>
+
+<p>Принял канд. техн. наук, доцент: <strong><a
+        href="http://www.omgtu.ru/general_information/faculties/faculty_of_information_technology_and_computer_systems/department_of_automated_systems_of_information_processing_and_management/about/stuff.php">Малков
+    Олег Брониславович</a></strong></p>
+<p>Выполнил cтудент группы ЗИВТ-131: <strong><a href="https://github.com/ffedoroff">Федоров Роман Сергеевич</a></strong>
+</p>
+<p>Исходный код: <strong><a href="https://github.com/ffedoroff/omgtu/tree/master/semestr7/subd">github</a></strong></p>
+
+<div class="well">
+    <p>
+        <strong>Задание курсового проекта:</strong>
+        Страховая компания. Страховая компания имеет филиалы, которые характеризуются наименованием, адресом и
+        телефоном. В филиалы обращаются клиенты с целью заключения договора о страховании. В зависимости от принимаемых
+        на страхование объектов и страхуемых рисков договор заключается по определенному виду страхования (страхование
+        автотранспорта от угона, страхование домашнего имущества, добровольное медицинское страхование). При заключении
+        договора фиксируются: дата заключения, страховая сумма, вид страхования, тарифная ставка и филиал, в котором
+        заключался договор. Договоры заключают страховые агенты. Помимо информации об агентах (фамилия, имя, отчество,
+        адрес, телефон) нужно хранить филиал, в котором они работают. Необходимо иметь возможность рассчитывать
+        заработную плату агентам. Заработная плата составляет некоторый процент от страхового платежа (платеж –
+        страховая сумма, умноженная на тарифную ставку).
+    </p>
+</div>
+
+<h3>таблицы для просмотра и редактирования</h3>
+<ul>
+    <li><a href="/admin/subd/filial/"><span class="badge">{{ count_filial }}</span> Филиалы</a></li>
+    <li><a href="/admin/subd/agent/"><span class="badge">{{ count_agent }}</span> Агенты</a></li>
+    <li><a href="/admin/subd/client/"><span class="badge">{{ count_client }}</span> Клиенты</a></li>
+    <li><a href="/admin/subd/contract/"><span class="badge">{{ count_contract }}</span> Договоры</a></li>
+</ul>
+
+<h3>расчет заработной платы</h3>
+(для сортировки, щелкните по колонке)
+<table class="table table-bordered table-condensed table-hover sortable">
+    <thead>
+    <tr>
+        <th data-firstsort="asc">Месяц</th>
+        <th>Агент</th>
+        <th>Кол-во договоров</th>
+        <th>Средняя комиссия за договор</th>
+        <th>Итого з/п за месяц</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for c in contracts %}
+    <tr>
+        <td>{{ c.m }}</td>
+        <td>{{ c.agent__fio }}</td>
+        <td>{{ c.count }}</td>
+        <td data-value="{{ c.avg }}">{{ c.avg|intcomma }}</td>
+        <td data-value="{{ c.total }}">{{ c.total|intcomma }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
