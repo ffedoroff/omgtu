@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Федоров Роман</title>
+</head>
+<body>
+<link href='/css/bootstrap.min.css' rel="stylesheet">
+<!--<link href='/css/bootstrap-sortable.css' rel="stylesheet">-->
+<link href='/css/bootstrap-theme.min.css' rel="stylesheet">
+<link href='/css/theme.css' rel="stylesheet">
+<script src='/js/jquery.min.js'></script>
+<script src='/js/bootstrap.min.js'></script>
+<!--<script src='/js/moment.min.js'></script>-->
+<!--<script src='/js/bootstrap-sortable.js'></script>-->
+<div class="container theme-showcase" role="main">
+    <script src="/js/index.js"></script>
+
+    <p>Принял зав.лаб., ст.преподаватель: <strong><a
+            href="http://www.omgtu.ru/general_information/faculties/faculty_of_information_technology_and_computer_systems/department_of_automated_systems_of_information_processing_and_management/about/stuff.php">
+        Анатольев Александр Геннадьевич</a></strong></p>
+    <p>Выполнил cтудент группы ЗИВТ-131: <strong><a href="https://github.com/ffedoroff">Федоров Роман
+        Сергеевич</a></strong>
+    </p>
+    <p>Исходный код: <strong><a href="https://github.com/ffedoroff/omgtu/tree/master/semestr8/wp">github</a></strong>
+    </p>
+
+    <div class="well">
+        <p>
+            <strong>Задание:</strong>
+            1. HTTP-сервер. Простой веб-сервер, предоставляющий доступ к статическим ресурсам.
+        </p>
+    </div>
+
+
+    <h3>Краткое описание:</h3>
+    <p>
+        В ходе работы был реализован собственный веб сервер rfedorov, используя сторонний соккет сервер на языке Python.
+    </p>
+
+    <h3>Хостинг и настройки:</h3>
+    <ul>
+        <li>Используется доменное имя третьего уровня <strong>wp.rfedorov.ru</strong></li>
+        <li>Данный сайт выложен на сторонний облачный сервер DigitalOcean</li>
+        <li>Для работы этого сайта используется собственный веб сервер rfedorov с портом <strong>8047</strong></li>
+        <li>Используется прозрачный прокси nginx с портом <strong>80</strong></li>
+    </ul>
+
+    <h3>Возможности веб сервера:</h3>
+    <ul>
+        <li>Отображение индексного файла <strong>index.html</strong> при отстутствии пути</li>
+        <li>Отображение <a href="/css/bootstrap.min.css" title="bootstrap">css</a> файлов</li>
+        <li>Отображение <a href="/js/jquery.min.js" title="jquery">js</a> файлов</li>
+        <li>Отображение <a href="/error-example" title="404 error">ошибок</a> при неправильных запросах</li>
+        <li>Поддержка keep-alive</li>
+        <li>Автоматическое добавление "правильных" заголовков в зависимости от типа файла</li>
+        <li>Динамическая страница <a href="/dynamic/" title="">/dynamic/</a>, которая отображает серверное время</li>
+    </ul>
+
+    <h3>Настройки прозрачного прокси nginx:</h3>
+    На хостинг сервере используется несколько веб серверов.
+    Собственный веб сервер rfedorov c портом <strong><a href="http://wp.rfedorov.ru:8047/" title="rfedorov server">8047</a></strong>.
+    Веб сервер nginx c портом <strong><a href="http://wp.rfedorov.ru/" title="nginx server">80</a></strong>,
+    который прозрачно проксирует все запросы вида <strong>.wp.rfedorov.ru</strong>
+    с порта <strong>80</strong> на <strong>8047</strong>.
+    Это сделано для того, чтобы остальные сайты на 80 порту данного сервера продолжали корректно работать.
+    Настройки nginx:
+    <pre>
+server {
+    server_name .wp.rfedorov.ru;
+    error_log /var/log/nginx/wp-error.log;
+
+    location / {
+        proxy_pass http://127.0.0.1:8047;
+        proxy_pass_header Server;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+    }
+}
+</pre>
+</div>
+</body>
+</html>
