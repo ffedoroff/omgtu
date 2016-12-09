@@ -32,6 +32,8 @@ class RomaHandler(BaseHTTPRequestHandler):
                 self.send_header("Content-Type", "text/css")
             elif file_extension == ".js":
                 self.send_header("Content-Type", "application/javascript")
+            elif file_extension == ".xml":
+                self.send_header("Content-Type", "text/xml")
             else:
                 return False
             self.end_headers()

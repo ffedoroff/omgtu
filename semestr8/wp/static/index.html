@@ -4,27 +4,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="https://plus.google.com/u/0/+RomanFedorov" />
     <title>Федоров Роман</title>
 </head>
 <body>
 <link href='/css/bootstrap.min.css' rel="stylesheet">
-<!--<link href='/css/bootstrap-sortable.css' rel="stylesheet">-->
 <link href='/css/bootstrap-theme.min.css' rel="stylesheet">
 <link href='/css/theme.css' rel="stylesheet">
 <script src='/js/jquery.min.js'></script>
 <script src='/js/bootstrap.min.js'></script>
-<!--<script src='/js/moment.min.js'></script>-->
-<!--<script src='/js/bootstrap-sortable.js'></script>-->
 <div class="container theme-showcase" role="main">
     <script src="/js/index.js"></script>
 
     <p>Принял зав.лаб., ст.преподаватель: <strong><a
-            href="http://www.omgtu.ru/general_information/faculties/faculty_of_information_technology_and_computer_systems/department_of_automated_systems_of_information_processing_and_management/about/stuff.php">
+            href="http://www.omgtu.ru/general_information/faculties/faculty_of_information_technology_and_computer_systems/department_of_automated_systems_of_information_processing_and_management/about/stuff.php"
+            title="сайт кафедры">
         Анатольев Александр Геннадьевич</a></strong></p>
     <p>Выполнил cтудент группы ЗИВТ-131: <strong><a href="https://github.com/ffedoroff">Федоров Роман
         Сергеевич</a></strong>
     </p>
-    <p>Исходный код: <strong><a href="https://github.com/ffedoroff/omgtu/tree/master/semestr8/wp">github</a></strong>
+    <p>Исходный код: <strong><a href="https://github.com/ffedoroff/omgtu/tree/master/semestr8/wp/">github</a></strong>
     </p>
 
     <div class="well">
@@ -34,6 +33,27 @@
         </p>
     </div>
 
+    <h3>Требования к сайту:</h3>
+    <ul>
+        <li><a href="/about.html">Страница</a> с информацией о разработчике (т.е. о Вас), размеченная с использованием микроформата hCard.</li>
+        <li>Карта сайта в формате SiteMap. <a href="/sitemap.xml">http://wp.rfedorov.ru/sitemap.xml</a></li>
+        <li>В блоке head каждой страницы – тег link на ваш профиль в Google</li>
+        <li><a href="/rss.xml">RSS</a> в формате RSS 2.0 или Atom.</li>
+        <li>На каждой странице любой счетчик посещений с открытой статистикой (например, http://liveinternet.ru).</li>
+        <li>Прямая ссылка со стартовой страницы на сайт кафедры АСОИУ.</li>
+        <li>Средства интеграции с социальными веб-сервисами (см. API mail.ru, yandex.ru, odnoklassniki.ru, vkontakte.ru и т.д.).</li>
+    </ul>
+
+    <h3>Требования к оформлению:</h3>
+    <ul>
+        <li>Блочная («div-ная») верстка</li>
+        <li>Кросс-браузерность.</li>
+        <li>Подержка CSS (минимум – CSS 2) для различных типов медиа (screen, print, handheld).</li>
+        <li>Валидный HTML и CSS.</li>
+        <li>Обязательное наличие атрибутов title у ссылок и alt у изображений.</li>
+        <li>Относительные адреса у внутренних ссылок и абсолютные – у внешних.</li>
+        <li>ВНИМАНИЕ! В качестве основы для макета сайта (общей идеи оформления, концепции дизайна) разрешается использовать тематические шаблоны для сайтов, распространяемые под лицензией Creative Commons или подобной.</li>
+    </ul>
 
     <h3>Краткое описание:</h3>
     <p>
@@ -56,7 +76,7 @@
         <li>Отображение <a href="/error-example" title="404 error">ошибок</a> при неправильных запросах</li>
         <li>Поддержка keep-alive</li>
         <li>Автоматическое добавление "правильных" заголовков в зависимости от типа файла</li>
-        <li>Динамическая страница <a href="/dynamic/" title="">/dynamic/</a>, которая отображает серверное время</li>
+        <li>Динамическая страница <a href="/dynamic/" title="время сервера">/dynamic/</a>, которая отображает серверное время</li>
     </ul>
 
     <h3>Настройки прозрачного прокси nginx:</h3>
@@ -82,6 +102,34 @@ server {
     }
 }
 </pre>
+
+<!-- begin ASOIU -->
+<a href="http://asoiu.com/"
+	title="Официальный сайт кафедры АСОИУ ОмГТУ">Кафедра АСОИУ</a>
+<!-- end ASOIU -->
+
+
+<!-- Вставьте этот тег в заголовке страницы или непосредственно перед закрывающим тегом основной части. -->
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'ru'}
+</script>
+<!-- Поместите этот тег туда, где должна отображаться кнопка +1. -->
+<div><div class="g-plusone" data-annotation="inline" data-width="300"></div></div>
+
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='//www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t52.6;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: number of pageviews and visitors"+
+" for 24 hours is shown' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script><!--/LiveInternet-->
+
 </div>
 </body>
+
+
 </html>

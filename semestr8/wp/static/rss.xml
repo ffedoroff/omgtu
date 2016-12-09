@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Федоров Роман</title>
+  <link>http://wp.rfedorov.ru/</link>
+  <description>Веб программирование</description>
+  <item>
+    <title>Главная</title>
+    <link>http://wp.rfedorov.ru/</link>
+    <description>Главная страница</description>
+  </item>
+  <item>
+    <title>Обо мне</title>
+    <link>http://wp.rfedorov.ru/about.html</link>
+    <description>визитка</description>
+  </item>
+</channel>
+
+</rss>
