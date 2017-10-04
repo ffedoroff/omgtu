@@ -4,6 +4,27 @@ var operators = ['+', '-', 'x', '÷'];
 var decimalAdded = false;
 var input = document.querySelector('.screen');
 
+function calculate(equation) {
+    // Replace all instances of x and ÷ with * and / respectively.
+    // This can be done easily using regex and the 'g' tag
+    // which will replace all instances of the matched character/substring
+    equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
+
+    // Final thing left to do is checking the last character of the equation.
+    // If it's an operator or a decimal, remove it
+    var lastChar = equation[equation.length - 1];
+    if (operators.indexOf(lastChar) > -1 || lastChar == '.')
+        equation = equation.replace(/.$/, '');
+
+    if (equation)
+        return eval(equation);
+    else
+        return "";
+}
+
+if (typeof module !== "undefined")
+    module.exports = calculate;
+
 // Add onclick event to all the keys and perform operations
 for (var i = 0; i < keys.length; i++) {
     keys[i].onclick = function (e) {
@@ -21,24 +42,7 @@ for (var i = 0; i < keys.length; i++) {
 
         // If eval key is pressed, calculate and display the result
         else if (btnVal == '=') {
-            var equation = inputVal;
-            // console.info(inputVal);
-            var lastChar = equation[equation.length - 1];
-
-            // Replace all instances of x and ÷ with * and / respectively.
-            // This can be done easily using regex and the 'g' tag
-            // which will replace all instances of the matched character/substring
-            equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
-
-            // Final thing left to do is checking the last character of the equation.
-            // If it's an operator or a decimal, remove it
-            if (operators.indexOf(lastChar) > -1 || lastChar == '.')
-                equation = equation.replace(/.$/, '');
-
-            if (equation)
-                // console.info(equation);
-                input.innerHTML = eval(equation);
-
+            input.innerHTML = calculate(inputVal);
             decimalAdded = false;
         }
 
@@ -93,8 +97,3 @@ for (var i = 0; i < keys.length; i++) {
         e.preventDefault();
     }
 }
-
-// function sum2(a, b) {
-//   return a + b;
-// }
-// module.exports = sum2;
