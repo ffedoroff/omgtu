@@ -1,6 +1,7 @@
 .idea/
 *.class
 node_modules/
+coverage/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

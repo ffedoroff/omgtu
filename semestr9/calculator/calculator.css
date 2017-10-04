@@ -18,6 +18,23 @@ html {
     background-size: cover;
 }
 
+h1 {
+    text-align: center;
+    color: #888;
+    font-size: 2em;
+    padding-top: 10px;
+}
+h2 {
+    text-align: center;
+    color: #888;
+    font-size: 1.5em;
+    padding-top: 10px;
+}
+
+h2 a {
+    color: #888;
+}
+
 /* Using box shadows to create 3D effects */
 #calculator {
     width: 325px;
