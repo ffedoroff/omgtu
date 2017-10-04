@@ -9,3 +9,6 @@ jest --coverage
 
 # example output with coverage
 ![example output with coverage](jest.png "example output with coverage")
+
+# live demo
+https://wp.rfedorov.ru/calculator/index.html
