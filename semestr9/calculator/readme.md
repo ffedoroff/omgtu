@@ -1,8 +1,11 @@
-# docs
+# jest testing framework getting started
 https://facebook.github.io/jest/docs/en/getting-started.html
 
-# install and run tests
+# install jest and run tests
 ```
-npm install --save-dev jest
-npm test
+sudo npm install -g jest
+jest --coverage
 ```
+
+# example output with coverage
+![example output with coverage](jest.png "example output with coverage")
